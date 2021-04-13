@@ -1,0 +1,25 @@
+<div id="showPosters" class='container'>
+  <div class="row">
+  <div id="poster1" class='col-sm'>
+    <p id="voteCount">{{movies[0].voteCount1}}</p>
+    <p [hidden]='!movies[0].chosen'>Chosen!</p>
+    <img [src]="movies[0].poster1Img" alt="" id="poster1Img">
+    <button id="btn1" (click)='onclick(movies[0])' [hidden]="movies[0].hideBtn1">{{movies[0].btn1Text}}</button>
+  </div>
+  <div id="poster2" class='col'>
+    <p id="voteCount2">{{movies[1].voteCount2}}</p>
+    <img [src]="movies[1].poster2Img" alt="" id="poster2Img">
+    <button id="btn2" (click)='onclick(movies[0])' [hidden]="movies[1].hideBtn2">{{movies[1].btn2Text}}</button>
+  </div>
+  <div id="poster3" class='col'>
+    <p id="voteCount3">{{movies[2].voteCount3}}</p>
+    <img [src]="movies[2].poster3Img" alt="" id="poster3Img">
+    <button id="btn3" (click)='onclick(movies[0])' [hidden]="movies[2].hideBtn3">{{movies[2].btn3Text}}</button>
+  </div>
+  <div id="poster4" class='col'>
+    <p id="voteCount4">{{movies[3].voteCount4}}</p>
+    <img [src]="movies[3].poster4Img" alt="" id="poster4Img">
+    <button id="btn4" (click)='onclick(movies[0])' [hidden]="movies[3].hideBtn4">{{movies[3].btn4Text}}</button>
+  </div>
+</div>
+</div>
