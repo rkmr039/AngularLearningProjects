@@ -6,25 +6,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedIndex: number = -1;
 
-  onVoteClick(index: number) {
-    if(this.isSelected(index)) {
-      this.selectedIndex = -1;
-    } else {
-      this.selectedIndex = index;
-    }
+  wingCommandor  = {
+    "title": "Wing Commandor",
+    "years": 2000,
+    "rating": 4.5
+  };
+  theRoom  = {
+    "title": "The Room",
+    "years": 2003,
+    "rating": 3.5
+  };
+
+  rentalList = {
+    count: 4,
+    titles: "Cats, Howard the Duck, Jack and Jill, Batman and Robin"
   }
 
-  isSelected(index: number): boolean {
-    return this.selectedIndex == index;
+  addRental(movie: any) {
+    this.rentalList.count++;
+    this.rentalList.titles += ', ' + movie.title;
   }
-  anySelected() {
-    return this.selectedIndex !== -1;
+
+  removeRental(movie: any) {
+    this.rentalList.count--;
+    this.rentalList.titles = this.rentalList.titles.replace(movie.title, '');
+    this.rentalList.titles = this.rentalList.titles.replace(', ,', ',');
   }
-  getButtonText(index: number) {
-    if (this.selectedIndex === index) {
-      return 'Unvote';
-    } else  return 'Vote';
+  clearRentalList() {
+    this.rentalList.count = 0;
+    this.rentalList.titles = '';
   }
 }
